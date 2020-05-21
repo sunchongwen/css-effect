@@ -1,0 +1,79 @@
+1.下拉菜单一定要用 float 脱离文档流 这样不影响排版
+&:hover{
+              color:$colorA;
+              .children{
+              
+              //高度和 透明对两个过度transition:all .5s;
+                height:220px;
+                opacity:1;
+                border-top:1px solid #E5E5E5;
+              }
+            }
+            .children{
+            //绝对定位
+              position:absolute;
+              top:112px;
+              left:0;
+              width:1226px;
+              
+              //高度和 透明对两个过度transition:all .5s;
+              height:0;
+              opacity:0;
+              
+              //溢出隐藏
+              overflow:hidden;
+              //阴影效果 浮在最高
+              box-shadow:0px 7px 6px 0px rgba(0, 0, 0, 0.11);
+              z-index: 10;
+              transition:all .5s;
+              background-color: #ffffff;
+              
+              
+              
+              //product横向列表
+              .product{
+              //脱离文档流
+                position:relative;
+                float:left;
+                
+                width:16.6%;
+                height:220px;
+                //行高和字体一样 不然显示位置不对
+                font-size:12px;
+                line-height:12px;
+                //文字居中 很重要
+                text-align: center;
+                a{
+                  display:inline-block;
+                }
+                img{
+                  width:auto;
+                  height:111px;
+                  margin-top:26px;
+                }
+                .pro-img{
+                  height:137px;
+                }
+                .pro-name{
+                  font-weight:bold;
+                  margin-top:19px;
+                  margin-bottom:8px;
+                  color:$colorB;
+                }
+                .pro-price{
+                  color:$colorA;
+                }
+                &:before{
+                  content:' ';
+                  position:absolute;
+                  top:28px;
+                  right:0;
+                  border-left:1px solid $colorF;
+                  height:100px;
+                  width:1px;
+                }
+                &:last-child:before{
+                  display:none;
+                }
+              }
+            }
